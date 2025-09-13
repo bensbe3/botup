@@ -1,70 +1,122 @@
-# Getting Started with Create React App
+# BotUp - Chatbot Platform
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+BotUp is a platform that allows you to create and customize intelligent chatbots for your website. The system includes a dashboard for managing your chatbots and an embeddable widget that can be added to any website.
 
-## Available Scripts
+Copyright (c) 2024 Mohamed Bensbaa. All rights reserved.
 
-In the project directory, you can run:
+## Features
 
-### `npm start`
+- Create and customize intelligent chatbots
+- Customize appearance, behavior, and responses
+- Test chatbots in real-time
+- Embed chatbots on any website with a simple script
+- Track conversation statistics
+- Real-time conversation management
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Setup Instructions
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Prerequisites
 
-### `npm test`
+- Node.js (v14+)
+- MySQL database
+- npm or yarn
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Installation
 
-### `npm run build`
+1. Clone the repository:
+   ```
+   git clone https://github.com/yourusername/botup.git
+   cd botup
+   ```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+2. Install dependencies:
+   ```
+   npm install
+   ```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+3. Create a `.env` file in the root directory with the following variables:
+   ```
+   DB_HOST=localhost
+   DB_USER=root
+   DB_PASSWORD=your_password
+   DB_NAME=botup
+   JWT_SECRET=your_secret_key
+   PORT=5000
+   ```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+4. Initialize the database:
+   ```
+   node src/DB/init-db.js
+   ```
 
-### `npm run eject`
+### Running the Application
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+1. Start the backend server:
+   ```
+   npm start
+   ```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+2. In a separate terminal, start the frontend development server:
+   ```
+   npm run dev
+   ```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+3. Access the application at `http://localhost:3000`
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Project Structure
 
-## Learn More
+- `/src` - Source code
+  - `/components` - React components
+  - `/contexts` - React contexts for state management
+  - `/pages` - Page components
+  - `/services` - Service modules
+  - `/DB` - Database and backend code
+    - `/routes` - API routes
+    - `db.js` - Database connection
+    - `server.js` - Express server
+  - `/public` - Public assets
+    - `widget.js` - Embeddable chatbot widget
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## API Endpoints
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- `/api/auth` - Authentication
+  - `POST /register` - Register a new user
+  - `POST /login` - Login
+  - `POST /refresh` - Refresh JWT token
 
-### Code Splitting
+- `/api/chatbots` - Chatbot management
+  - `GET /` - Get all chatbots
+  - `GET /:id` - Get a specific chatbot
+  - `POST /` - Create a new chatbot
+  - `PUT /:id` - Update a chatbot
+  - `DELETE /:id` - Delete a chatbot
+  - `GET /public/:id` - Get public chatbot config
+  - `POST /:id/conversation` - Start a conversation
+  - `POST /:id/message` - Send a message
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- `/api/conversations` - Conversation management
+  - `GET /chatbot/:id` - Get conversations for a chatbot
+  - `GET /analytics/chatbot/:id` - Get analytics for a chatbot
 
-### Analyzing the Bundle Size
+- `/api/chatbot` - Chatbot service
+  - `POST /generate` - Generate chatbot response
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Embedding on Your Website
 
-### Making a Progressive Web App
+Add this script to your website to embed the chatbot:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+```html
+<script src="http://your-server-url:5000/widget.js" data-botid="YOUR_BOT_ID"></script>
+```
 
-### Advanced Configuration
+Replace `YOUR_BOT_ID` with the ID of your chatbot.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## Chatbot Responses
 
-### Deployment
+The application includes intelligent response generation that provides contextual and helpful replies to user queries. The system is designed to be easily extensible for integration with various AI models or custom response logic.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## License
 
-### `npm run build` fails to minify
+Copyright (c) 2024 Mohamed Bensbaa. All rights reserved.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This project is proprietary software. Unauthorized copying, distribution, or modification is strictly prohibited.

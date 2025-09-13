@@ -1,22 +1,43 @@
 {
   "name": "botup",
-  "version": "0.1.0",
+  "version": "1.0.0",
+  "description": "Intelligent chatbot platform for websites",
+  "author": "Mohamed Bensbaa",
+  "license": "UNLICENSED",
   "private": true,
   "dependencies": {
     "@testing-library/dom": "^10.4.0",
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.3.0",
     "@testing-library/user-event": "^13.5.0",
+    "axios": "^1.9.0",
+    "bcrypt": "^5.1.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "framer-motion": "^12.10.1",
+    "jsonwebtoken": "^9.0.2",
+    "mysql2": "^3.14.1",
     "react": "^19.1.0",
+    "react-colorful": "^5.6.1",
     "react-dom": "^19.1.0",
+    "react-hot-toast": "^2.5.2",
+    "react-router-dom": "^7.5.3",
     "react-scripts": "5.0.1",
+    "recharts": "^2.15.3",
+    "socket.io": "^4.8.1",
+    "socket.io-client": "^4.8.1",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "node src/DB/routes/server.js",
+    "dev": "set PORT=3001 && react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "init-db": "node src/DB/init-db.js",
+    "dev:all": "concurrently \"npm run start\" \"npm run dev\"",
+    "setup": "node setup.js"
   },
   "eslintConfig": {
     "extends": [
@@ -35,5 +56,15 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@tailwindcss/aspect-ratio": "^0.4.2",
+    "@tailwindcss/forms": "^0.5.4",
+    "@tailwindcss/typography": "^0.5.9",
+    "autoprefixer": "^10.4.15",
+    "concurrently": "^8.2.2",
+    "nodemon": "^3.1.10",
+    "postcss": "^8.4.28",
+    "tailwindcss": "^3.3.3"
   }
 }
