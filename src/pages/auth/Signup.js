@@ -377,6 +377,12 @@ const Signup = () => {
             </Link>
           </p>
         </div>
+        
+        <div className="mt-8 text-center">
+          <p className="text-xs text-gray-500">
+            © 2025 BotUp by bensbe3. All rights reserved.
+          </p>
+        </div>
       </motion.div>
     </div>
   );
