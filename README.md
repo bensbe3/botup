@@ -2,7 +2,7 @@
 
 BotUp is a platform that allows you to create and customize intelligent chatbots for your website. The system includes a dashboard for managing your chatbots and an embeddable widget that can be added to any website.
 
-Copyright (c) 2024 Mohamed Bensbaa. All rights reserved.
+Copyright (c) 2025 Mohamed Bensbaa. All rights reserved.
 
 ## Features
 
