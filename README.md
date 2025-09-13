@@ -117,6 +117,6 @@ The application includes intelligent response generation that provides contextua
 
 ## License
 
-Copyright (c) 2024 Mohamed Bensbaa. All rights reserved.
+Copyright (c) 2025 Mohamed Bensbaa. All rights reserved.
 
 This project is proprietary software. Unauthorized copying, distribution, or modification is strictly prohibited.
